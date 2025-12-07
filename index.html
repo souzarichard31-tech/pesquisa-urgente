@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PESQUISA URGENTE</title>
+    <style>
+        /* CSS BÁSICO PARA ORGANIZAÇÃO */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Já sonhou com esse homem?</h1>
+    <img src="homen estranho.png" alt="um homen bem estranho">
+
+    <p>Escolha sua resposta:</p>
+
+    <button onclick="responder('sim')">SIM</button>
+    <button onclick="responder('nao')">NÃO</button>
+
+    <div id="resultado">
+        </div>
+
+    <script>
+        function responder(escolha) {
+            const divResultado = document.getElementById('resultado');
+            let caminhoImagem = '';
+            let altTexto = '';
+
+            if (escolha === 'sim') {
+                caminhoImagem = 'emoji feliz.png';
+                altTexto = 'Emoji feliz';
+            } else if (escolha === 'nao') {
+                caminhoImagem = 'emoji triste.png';
+                altTexto = 'Emoji triste';
+            }
+
+            if (caminhoImagem !== '') {
+                // Tamanho do emoji ajustado para 100px x 100px
+                divResultado.innerHTML = `
+                    <img src="${caminhoImagem}" alt="${altTexto}" style="width: 100px; height: 100px; margin-top: 20px;">
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
